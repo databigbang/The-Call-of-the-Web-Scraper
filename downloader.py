@@ -18,7 +18,7 @@ class Downloader:
 
 	def start(self):
 		for i in xrange(self.nworkers): # create workers
-			self.workers.append(Worker(self.queue), self.directory)
+			self.workers.append(Worker(self.queue, self.directory))
 
 		for w in self.workers: # run workers
 			w.start()
